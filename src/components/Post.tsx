@@ -5,11 +5,11 @@ export default function Post({post}: any) {
   const article = post.frontmatter;
 
   return (
-    <div>
+    <div className={"border-dotted border-2"}>
       <Image src={article.cover_image} alt={""} height={"500"} width={"500"} />
-      <div>Posted on: {article.date}</div>
+      <div className={"italic"}>Posted on: {article.date}</div>
 
-      <h3>{article.title}</h3>
+      <h3 className={"font-semibold text-xl"}>{article.title}</h3>
       <p>{article.excerpt}</p>
 
       <Link href={`/blog/${post.slug}`}>

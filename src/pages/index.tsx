@@ -2,10 +2,9 @@ import fs from "fs"
 import path from "path"
 import matter from "gray-matter";
 import Post from "../components/Post";
-import sortByDate from "../utils";
+import {sortByDate} from "../utils";
 
 export default function Home({posts}: any) {
-
 
   return (
     <div>

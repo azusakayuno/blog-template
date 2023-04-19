@@ -3,7 +3,8 @@ import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
-import {marked} from "marked";
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 export default function InnerPage({frontMatter: {title, date}, slug, content}: any) {
 
@@ -16,11 +17,33 @@ export default function InnerPage({frontMatter: {title, date}, slug, content}: a
         <h1>
           {title}
         </h1>
-        <div>
+        <div className={"italic"}>
           Posted on: {date}
         </div>
         <div>
-          <ReactMarkdown children={content}></ReactMarkdown>
+          <ReactMarkdown
+            children={content}
+            className={'markdown-body'}
+            components={{
+              code({node, inline, className, children, ...props}) {
+                const match = /language-(\w+)/.exec(className || '');
+
+                return !inline && match ? (
+                  <SyntaxHighlighter
+                    {...props}
+                    children={String(children).replace(/\n$/, '')}
+                    style={docco}
+                    language={match[1]}
+                    PreTag="pre"
+                  />
+                ) : (
+                  <code {...props} className={className}>
+                    {children}
+                  </code>
+                )
+              }
+            }}
+          />
         </div>
       </div>
     </>
