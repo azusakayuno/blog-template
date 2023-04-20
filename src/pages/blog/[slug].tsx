@@ -3,8 +3,8 @@ import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
-import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export default function InnerPage({frontMatter: {title, date}, slug, content}: any) {
 
@@ -32,9 +32,9 @@ export default function InnerPage({frontMatter: {title, date}, slug, content}: a
                   <SyntaxHighlighter
                     {...props}
                     children={String(children).replace(/\n$/, '')}
-                    style={docco}
+                    style={oneDark}
                     language={match[1]}
-                    PreTag="pre"
+                    PreTag="div"
                   />
                 ) : (
                   <code {...props} className={className}>
