@@ -5,15 +5,14 @@ export default function Post({post}: any) {
   const article = post.frontmatter;
 
   return (
-    <div className={"border-dotted border-2"}>
-      <Image src={article.cover_image} alt={""} height={"500"} width={"500"} />
-      <div className={"italic"}>Posted on: {article.date}</div>
+    <div className={"pb-4"}>
+      {article.cover_image ? <Image src={article.cover_image} alt={""} height={"250"} width={"250"} /> : <></>}
+      <h2 className={"font-semibold text-2xl"}>{article.title}</h2>
+      <div className={"text-xs pb-0.5"}>Posted on: {article.date}</div>
+      <p className={"pb-0.5 italic"}>{article.excerpt}</p>
 
-      <h3 className={"font-semibold text-xl"}>{article.title}</h3>
-      <p>{article.excerpt}</p>
-
-      <Link href={`/blog/${post.slug}`}>
-        Read More
+      <Link className={"text-sm"} href={`/blog/${post.slug}`}>
+        Read More...
       </Link>
     </div>
   )

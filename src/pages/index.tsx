@@ -7,10 +7,8 @@ import {sortByDate} from "@/utils";
 export default function Home({posts}: any) {
 
   return (
-    <div>
-      <h1>Hello</h1>
-
-      <div className={""}>
+    <div className={"pt-10 px-2"}>
+      <div className={"pt-3 pb-12"}>
         {posts.map((post: any, index: number) => (
           <Post key={index} post={post} />
         ))}

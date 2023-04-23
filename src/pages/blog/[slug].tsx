@@ -9,44 +9,44 @@ import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 export default function InnerPage({frontMatter: {title, date}, slug, content}: any) {
 
   return (
-    <>
-      <Link href={"/"}>
-        Go Back
-      </Link>
-      <div>
+    <div className={"pt-12 pb-12"}>
+      <div className={""}>
+        <Link href={"/"}>
+          Go Back
+        </Link>
         <h1>
           {title}
         </h1>
-        <div className={"italic"}>
-          Posted on: {date}
-        </div>
-        <div>
-          <ReactMarkdown
-            children={content}
-            className={'markdown-body'}
-            components={{
-              code({node, inline, className, children, ...props}) {
-                const match = /language-(\w+)/.exec(className || '');
-
-                return !inline && match ? (
-                  <SyntaxHighlighter
-                    {...props}
-                    children={String(children).replace(/\n$/, '')}
-                    style={oneDark}
-                    language={match[1]}
-                    PreTag="div"
-                  />
-                ) : (
-                  <code {...props} className={className}>
-                    {children}
-                  </code>
-                )
-              }
-            }}
-          />
-        </div>
       </div>
-    </>
+      <div className={"italic text-sm pt-0.5 pb-4"}>
+        Posted on: {date}
+      </div>
+      <div>
+        <ReactMarkdown
+          children={content}
+          className={'markdown-body'}
+          components={{
+            code({node, inline, className, children, ...props}) {
+              const match = /language-(\w+)/.exec(className || '');
+
+              return !inline && match ? (
+                <SyntaxHighlighter
+                  {...props}
+                  children={String(children).replace(/\n$/, '')}
+                  style={oneDark}
+                  language={match[1]}
+                  PreTag="div"
+                />
+              ) : (
+                <code {...props} className={className}>
+                  {children}
+                </code>
+              )
+            }
+          }}
+        />
+      </div>
+    </div>
   )
 }
 
