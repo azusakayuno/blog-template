@@ -165,6 +165,7 @@ a {
 }
 
 .markdown-body summary {
+  padding: 4px 0;
   display: list-item;
 }
 
