@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from 'rehype-raw';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
@@ -25,6 +26,7 @@ export default function InnerPage({frontMatter: {title, date}, slug, content}: a
         <ReactMarkdown
           children={content}
           className={'markdown-body'}
+          rehypePlugins={[rehypeRaw]}
           components={{
             code({node, inline, className, children, ...props}) {
               const match = /language-(\w+)/.exec(className || '');

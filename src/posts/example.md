@@ -26,9 +26,9 @@ procul fugitque corpora iugales!
 
 ~~~js
     var ethics_font_drive = cycleSystemProgram + deprecatedTransferIp.ide(3) /
-            rgb + nybbleBaseband;
-    permalinkCertificateMacintosh(ergonomicsIsdnDns);
-    boot = bridgeDaemonActive;
+  rgb + nybbleBaseband;
+permalinkCertificateMacintosh(ergonomicsIsdnDns);
+boot = bridgeDaemonActive;
 ~~~
 
 ## O contra diu
@@ -49,6 +49,61 @@ Unde stabant, acuta, percussit denique; hoc illic et herbis minimas parvum? Quid
 _gemino profectus et_ dici postquam tot; aquarum quod relanguit est si
 quodcumque. Ossaque protinus, quod somno est, repetit, hoc passu est. Qui devia;
 respice humum vobis oscula, in Lotis nymphae.
+
+# Nested Collabpsible list items
+
+<details>
+<summary> parent </summary>
+<blockquote>
+<details>
+<summary> child </summary>
+<blockquote>
+
+<details>
+  <summary>nested-child-1</summary>
+nested-content
+  <blockquote>
+non-block-nested-content
+
+  ```sh
+  content-text
+  ```
+
+  </blockquote>
+  nested-content
+  </details>
+
+  <details>
+    <summary> nested-child-2 </summary>
+    <blockquote>
+      a b c
+    </blockquote>
+  </details>
+
+  ```sh
+  nest-level-content
+  ```
+
+  </blockquote>
+  </details>
+
+  <details><summary> boot </summary><blockquote>
+  x y z
+  </blockquote></details>
+
+  <details>
+  <summary> dev </summary>
+  <blockquote>
+
+p
+q
+r
+  </blockquote>
+  </details>
+
+  </blockquote>
+
+</details>
 
 Dolet certamina velle dexteriore mutatus saepe, tellure ubi unguibus, gestu.
 Illis cuius finem Sirenes adsueta stridore, pictas quo edidit, nec utque et
